@@ -1,0 +1,25 @@
+﻿<h1>Todoリスト</h1>
+
+<table>
+  <tr>
+    <th>やること</th>
+    <th>期日</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.due_date %></td>
+    <td><%= link_to 'kwsk', post %></td>
+    <td><%= link_to '編集', edit_post_path(post) %></td>
+    <td><%= link_to '削除', post, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新しいTodoを追加', new_post_path %>

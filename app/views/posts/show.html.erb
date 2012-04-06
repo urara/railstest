@@ -1,0 +1,20 @@
+﻿<p id="notice"><%= notice %></p>
+
+<p>
+  <b>やること:</b>
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>期日:</b>
+  <%= @post.due_date %>
+</p>
+
+<p>
+  <b>詳細:</b>
+  <%= @post.content %>
+</p>
+
+
+<%= link_to '編集', edit_post_path(@post) %> |
+<%= link_to '戻る', posts_path %>
